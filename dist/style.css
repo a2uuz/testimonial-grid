@@ -217,7 +217,8 @@ body {
     display: grid;
     gap: 1rem;
     margin: 3rem 9rem;
-        grid-template-areas: 'purple purple purple grey white2' 'white1 dark dark dark white2';
+        grid-template-areas: 'purple purple purple grey white2'
+ 'white1 dark dark dark white2';
   }
 }
 /*# sourceMappingURL=style.css.map */
