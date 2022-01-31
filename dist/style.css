@@ -9,14 +9,13 @@
 body {
   background-color: #ecf2f8;
   min-width: 200px;
-  min-height: 756px;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 0.813rem;
   text-align: left;
 }
 
 .purple {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: auto;
   padding: 2rem;
   display: -webkit-box;
@@ -28,16 +27,8 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #7541c8;
-  background-image: url(/images/bg-pattern-quotation.svg);
-  background-position-x: 84%;
-  background-size: 20%;
-  background-repeat: no-repeat;
+  background: #7541c8 url(/images/bg-pattern-quotation.svg) no-repeat right 10% top;
   color: white;
-  /* 
-  Note: i did not nest the span tag with the header
-  to be able to extend it's features to the p tag below
-  */
   grid-area: purple;
 }
 
@@ -59,13 +50,15 @@ body {
   opacity: 50%;
 }
 
-.purple h3 {
-  margin: .5rem 0;
+.purple .center {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .grey {
   background-color: #48556a;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: auto;
   padding: 2rem;
   display: -webkit-box;
@@ -99,13 +92,15 @@ body {
   opacity: 50%;
 }
 
-.grey h3 {
-  margin: .5rem 0;
+.grey .center {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .first-white, .second-white {
   background-color: white;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: auto;
   padding: 2rem;
   display: -webkit-box;
@@ -142,8 +137,10 @@ body {
   opacity: 50%;
 }
 
-.first-white h3, .second-white h3 {
-  margin: .5rem 0;
+.first-white .center, .second-white .center {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .first-white span, .second-white span, .first-white .bio, .second-white .bio {
@@ -152,7 +149,7 @@ body {
 
 .dark {
   background-color: #19212e;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: auto;
   padding: 2rem;
   display: -webkit-box;
@@ -186,12 +183,23 @@ body {
   opacity: 50%;
 }
 
-.dark h3 {
-  margin: .5rem 0;
+.dark .center {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .second-white {
   grid-area: white2;
+}
+
+footer {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #3e52a3;
 }
 
 @media (min-width: 200px) {
@@ -206,19 +214,19 @@ body {
     gap: 1rem;
     margin: 2rem;
   }
+  footer {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 900px) {
-  body {
-    overflow: hidden;
-  }
   main {
     display: -ms-grid;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     margin: 3rem 9rem;
-        grid-template-areas: 'purple purple purple grey white2'
- 'white1 dark dark dark white2';
+        grid-template-areas: "purple purple purple grey white2" "white1 dark dark dark white2";
   }
 }
 /*# sourceMappingURL=style.css.map */

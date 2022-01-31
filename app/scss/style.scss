@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 
 // VARIBALES
 // FONTS
-$fonts: 'Barlow Semi Condensed', sans-serif;
+$fonts: "Barlow Semi Condensed", sans-serif;
 
 // COLORS
 $Moderate-violet: hsl(263, 55%, 52%);
@@ -14,127 +14,127 @@ $Light-grayish-blue: hsl(210, 46%, 95%);
 
 // MIXINS
 @mixin primary-style {
-  border-radius: .5rem;
-  height: auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
+	border-radius: 0.5rem;
+	height: auto;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 @mixin card {
-  
-  color: $White;
-  .header{
-    display: flex;
-    gap: 1rem;
-    
+	color: $White;
+	.header {
+		display: flex;
+		gap: 1rem;
 
-    img{
-      border-radius: 50%;
-      border: 1px $Light-gray solid;
-      width: 35px;
-    }
-    }
-    span{
-    color: $Light-gray;
-    opacity: 50%;
-  }
+		img {
+			border-radius: 50%;
+			border: 1px $Light-gray solid;
+			width: 35px;
+		}
+	}
+	span {
+		color: $Light-gray;
+		opacity: 50%;
+	}
 
-  h3{
-    margin: .5rem 0;
-  }
+	.center {
+		margin: 0.5rem 0;
+		font-size: 1rem;
+		font-weight: 600;
+	}
 
-  .bio{
-    @extend span;
-  }
+	.bio {
+		@extend span;
+	}
 }
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-body{
-  background-color: $Light-grayish-blue;
-  min-width: 200px;
-  min-height: 756px;
-  font-family: $fonts;
-  font-size: 0.813rem;
-  text-align: left;
+body {
+	background-color: $Light-grayish-blue;
+	min-width: 200px;
+	font-family: $fonts;
+	font-size: 0.813rem;
+	text-align: left;
 }
 
-.purple{
- @include primary-style();
-  background-color: $Moderate-violet;
-  background-image: url(/images/bg-pattern-quotation.svg);
-  background-position-x: 84%;
-  background-size: 20%;
-  background-repeat: no-repeat;
-  @include card();
-  /* 
-  Note: i did not nest the span tag with the header
-  to be able to extend it's features to the p tag below
-  */
-  grid-area: purple;
+.purple {
+	@include primary-style();
+	background: $Moderate-violet url(/images/bg-pattern-quotation.svg) no-repeat right 10% top;
+	@include card();
+	grid-area: purple;
 }
 
-.grey{
-  background-color: $Very-dark-grayish-blue;
-  @include primary-style();
-  @include card();
-  grid-area: grey;
+.grey {
+	background-color: $Very-dark-grayish-blue;
+	@include primary-style();
+	@include card();
+	grid-area: grey;
 }
 
-.first-white{
-  background-color: $White;
-  @include primary-style();
-  @include card();
-  color: $Very-dark-grayish-blue;
+.first-white {
+	background-color: $White;
+	@include primary-style();
+	@include card();
+	color: $Very-dark-grayish-blue;
 
-  span{
-    opacity: 1;
-  }
-  box-shadow: rgba(86, 86, 87, 0.342) 0px 30px 100px;
+	span {
+		opacity: 1;
+	}
 
-  grid-area: white1;
+	box-shadow: rgba(86, 86, 87, 0.342) 0px 30px 100px;
+	grid-area: white1;
 }
 
-.dark{
-  background-color: $Very-dark-blackish-blue;
-  @include primary-style();
-  @include card();
-  grid-area: dark;
+.dark {
+	background-color: $Very-dark-blackish-blue;
+	@include primary-style();
+	@include card();
+	grid-area: dark;
 }
 
-.second-white{
-  @extend .first-white;
-  grid-area: white2;
-
+.second-white {
+	@extend .first-white;
+	grid-area: white2;
 }
 
-@media (min-width:200px){
-  main{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem;
-  }
+footer {
+	font-size: 1rem;
+	text-align: center;
+}
+
+.footer a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 200px) {
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin: 2rem;
+	}
+
+	footer {
+		font-size: 13px;
+		margin-bottom: 10px;
+	}
 }
 
 @media (min-width: 900px) {
-  body{
-  overflow: hidden;
-  }
-  main {
-    display: grid;
-    gap: 1rem;
-    margin: 3rem 9rem;
-    
-    
-    grid-template-areas: 
-    'purple purple purple grey white2'
-    'white1 dark dark dark white2';
-  }
+	main {
+		display: grid;
+		gap: 2rem;
+		margin: 3rem 9rem;
+
+		grid-template-areas:
+			"purple purple purple grey white2"
+			"white1 dark dark dark white2";
+	}
 }
